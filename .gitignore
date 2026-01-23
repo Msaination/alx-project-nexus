@@ -1,0 +1,7 @@
+.vevnNEXUS/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+.env.*
+db.sqlite3
