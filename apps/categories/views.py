@@ -12,4 +12,11 @@ class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
+    def perform_create(self, serializer):
+        serializer.save()
+    def perform_update(self, serializer):
+        serializer.save()
+    def perform_destroy(self, instance):
+        instance.delete()
+# --- IGNORE ---
 
