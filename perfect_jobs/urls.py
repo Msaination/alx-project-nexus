@@ -17,13 +17,13 @@ schema_view = get_schema_view(
 #page for app urls
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('api/swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('api/redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 
-    path('api/', include('apps.categories.urls'), name='categories'),
-    path('api/', include('apps.jobs.urls'), name='jobs'),
-    path('api/', include('apps.applications.urls'), name='applications'),
-    path('api/', include('apps.auth.urls'), name='auth'),
+    path('api/categories/', include('apps.categories.urls'), name='categories'),
+    path('api/jobs/', include('apps.jobs.urls'), name='jobs'),
+    path('api/applications/', include('apps.applications.urls'), name='applications'),
+    path('api/auth/', include('apps.auth.urls'), name='auth'),
 
     
 ]
