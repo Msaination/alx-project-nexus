@@ -22,8 +22,10 @@ urlpatterns = [
 
     path('api/categories/', include('apps.categories.urls'), name='categories'),
     path('api/jobs/', include('apps.jobs.urls'), name='jobs'),
-    path('api/applications/', include('apps.applications.urls'), name='applications'),
+    path('api/applications/', include('apps.applications.urls'),),
+    
     path('api/auth/', include('apps.auth.urls'), name='auth'),
+    path('api/', include('apps.users.urls'), name='users'),
 
     
 ]
