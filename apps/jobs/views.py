@@ -3,6 +3,16 @@ from apps.users.permissions import IsAdmin, IsUser
 from .models import Job
 from .serializers import JobSerializer
 from drf_yasg.utils import swagger_auto_schema
+from django.http import HttpResponse
+
+
+#Create homepage view
+def homepage(request):
+    return HttpResponse("Welcome to the Perfect Jobs API! Visit /api/swagger/ for API documentation.")  
+
+
+
+
 
 # no authentication required for list view
 class JobListView(generics.ListCreateAPIView):
