@@ -40,7 +40,6 @@ INSTALLED_APPS = [
 
     # Local apps, installed
     'apps.users.apps.UsersConfig',
-    'apps.categories.apps.CategoriesConfig',
     'apps.jobs.apps.JobsConfig',
     'apps.applications.apps.ApplicationsConfig',
     'apps.auth.apps.AuthConfig',
@@ -68,7 +67,7 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+    'django.contrib.messages.context_processors.messages',
             ],
         },
     },
@@ -136,6 +135,9 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),          
 }
 SWAGGER_SETTINGS = {
    'SECURITY_DEFINITIONS': {   

@@ -22,7 +22,7 @@ urlpatterns = [
     path('api/swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('api/redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 
-    path('api/categories/', include('apps.categories.urls'), name='categories'),
+    # Include app-specific URLs
     path('api/jobs/', include('apps.jobs.urls'), name='jobs'),
     path('api/applications/', include('apps.applications.urls'),),
     

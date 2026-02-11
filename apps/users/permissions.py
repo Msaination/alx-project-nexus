@@ -2,11 +2,21 @@ from rest_framework import permissions
 
 class IsAdmin(permissions.BasePermission):
     def has_permission(self, request, view):
-        return request.user.is_authenticated and request.user.role == 'admin'
+        return request.user.is_authenticated and request.user.role == 'Admin'
 
 class IsUser(permissions.BasePermission):
     def has_permission(self, request, view):
-        return request.user.is_authenticated and request.user.role == 'user'
+        return request.user.is_authenticated and request.user.role == 'User'
+
+# from rest_framework.permissions import BasePermission
+
+# class IsAdmin(BasePermission):
+#     """
+#     Custom permission to only allow users with role 'admin' to access the view.
+#     """
+
+#     def has_permission(self, request, view):
+#         return request.user.is_authenticated and request.user.role == 'admin'
 
 # from rest_framework import permissions
 

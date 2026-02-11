@@ -3,7 +3,6 @@ from rest_framework import generics
 from drf_yasg.utils import swagger_auto_schema
 from .serializers import UserSerializer
 from .permissions import IsAdmin  # 👈 custom permission you defined
-
 User = get_user_model()
 
 
